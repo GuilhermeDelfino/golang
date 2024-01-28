@@ -30,7 +30,7 @@ func main() {
 
 #### Godotenv -> Use .env variables
 
-`$ go get https://github.com/Valgard/godotenv`
+`$ go get github.com/joho/godotenv`
 
 Example
 
@@ -40,14 +40,9 @@ import (
 )
 
 func main() {
-	dotenv := godotenv.New()
-	if err := dotenv.Load(".env"); err != nil {
-		panic(err)
-	}
-
-	// You can also load several files
-	if err := dotenv.Load(".env", ".env.dev"); err != nil {
-		panic(err)
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
 	}
 }
 ```
@@ -69,7 +64,7 @@ import (
 
 // ...
 
-db, err := sql.Open("mysql", "user:password@<host>/dbname")
+db, err := sql.Open("mysql", "user:password@tcp(<host>)/dbname")
 if err != nil {
 	panic(err)
 }
