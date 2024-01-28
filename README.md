@@ -2,7 +2,7 @@
 
 #### Starting a Golang project
 
-`go mod init <source/project-name>`
+`$ go mod init <source/project-name>`
 
 #### Folder Structure (example)
 
@@ -62,3 +62,11 @@ We need a function with main name to be entrypoint of our application
     ...
   }
 ```
+
+#### Running
+
+`$ go run main.go`
+
+#### Building
+
+`$ go build main.go`
