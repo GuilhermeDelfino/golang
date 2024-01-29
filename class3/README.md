@@ -1,4 +1,4 @@
-# Class 3 - Using some libs
+# Class 3 - Using some libs - Rest API
 
 #### How I import some library? Here an example
 
