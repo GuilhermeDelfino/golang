@@ -2,7 +2,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
 )
 
 func main() {
@@ -13,29 +16,30 @@ func main() {
 	// 3*3 => 9
 
 	// Criar um scanner para ler do terminal
-	// scanner := bufio.NewScanner(os.Stdin)
+	scanner := bufio.NewScanner(os.Stdin)
 
-	// fmt.Print("Digite um numero: ")
-	// scanner.Scan()
-	// numero1 := scanner.Text()
-	// fmt.Print("Digite outro numero: ")
-	// scanner.Scan()
-	// numero2 := scanner.Text()
+	fmt.Print("Digite um numero: ")
+	scanner.Scan()
+	numero1 := scanner.Text()
+	fmt.Print("Digite outro numero: ")
+	scanner.Scan()
+	numero2 := scanner.Text()
 
-	// numero1Inteiro, err := strconv.Atoi(numero1)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// numero2Inteiro, err := strconv.Atoi(numero2)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	if 2 == 3 {
+	numero1Inteiro, err := strconv.Atoi(numero1)
+	if err != nil {
+		panic(err)
+	}
+	numero2Inteiro, err := strconv.Atoi(numero2)
+	if err != nil {
+		panic(err)
+	}
+	if numero1Inteiro == numero2Inteiro {
 		fmt.Println("Verdade")
 	} else {
 		fmt.Println("Mentiraa")
 	}
-
+	fmt.Println("Soma:", soma(numero1Inteiro, numero2Inteiro))
+	fmt.Println("Subtracao:", subtracao(numero1Inteiro, numero2Inteiro))
 }
 
 // Funcao
